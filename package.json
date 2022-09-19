@@ -1,0 +1,20 @@
+{
+  "name": "module-14-challenge",
+  "version": "1.0.0",
+  "description": "AS A developer who writes about tech I WANT a CMS-style blog site SO THAT I can publish articles, blog posts, and my thoughts and opinions",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daniel-PeGa/module-14-challenge.git"
+  },
+  "author": "Daniel Perez Garnica",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daniel-PeGa/module-14-challenge/issues"
+  },
+  "homepage": "https://github.com/Daniel-PeGa/module-14-challenge#readme"
+}
