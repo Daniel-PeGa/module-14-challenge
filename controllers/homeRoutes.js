@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -51,7 +52,7 @@ router.get('/signup', (req, res) => {
     } res.render('signup');
 });
 
-router.post('/post/:id', (req, res) => {
+router.get('/post/:id', (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
