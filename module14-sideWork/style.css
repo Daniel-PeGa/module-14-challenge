@@ -1,0 +1,45 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.logOut_btn {
+    background-color: rgb(204, 89, 89);
+};
+
+.signupCSS {
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.submitButton {
+    display: flex;
+    flex-direction: column;
+}
+
+.navTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.createPostBtn {
+    background-color: rgb(76, 217, 243);
+}
+
+.editPostButton {
+    background-color: aquamarine;
+}
+
+.noPosts {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 75%;
+}
