@@ -59,41 +59,37 @@ router.post('/', async (req, res) => {
     });
 });
 
-router.post('/login', async (req, res) => {
-    try {
-        const userData = await User.findOne({ where: { email: req.body.email }});
-
+router.post('/login', (req, res) => {
+    User.findOne({
+        where: {
+            email: req.body.email
+        }
+    }).then(dbUserData => {
         if (!dbUserData) {
-            res.status(400).json({ message: 'Somethings wrong here, could u try again pls??'});
+            res.status(400).json({ message: 'theres no user w/ this id :('});
             return;
-        }
-
-        const validPassword = await dbUserData.checkPassword(req.body.password);
-
+        } 
+        const validPassword = dbUserData.checkPassword(req.body.password);
         if (!validPassword) {
-            res.status(400).json({ message: 'I dont think this is right. Could u try again??'});
+            res.status(400).json({ message: 'this aint ur password'});
             return;
         }
-
         req.session.save(() => {
             req.session.user_id = dbUserData.id;
             req.session.username = dbUserData.username;
-            req.session.logged_in = true;
-
-            res.json({ user: dbUserData, message: 'ur now logged in'});
-        });
-    } catch (err) {
-        res.status(400).json(err);
-    }
+            req.session.loggedIn = true;
+            res.json({ user: dbUserData, message: 'logged in'})
+        })
+    })
 });
 
 router.post('/logout', (req, res) => {
-    if (req.session.logged_in) {
+    if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
         });
     } else {
-        res.status(404).end();
+        res.status(400).end();
     }
 });
 
