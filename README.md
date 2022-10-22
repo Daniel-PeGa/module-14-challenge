@@ -1,8 +1,58 @@
-# module-14-challenge
+# Model-View-Controller (MVC) Challenge - Tech Blog
+
+This project is intended for devellopers to share information online with each other and the world
+
+## Project Description
+
+This application takes in user information like email and password, and validates for future logins and logouts. It also takes in the information of the user's comment and publishes it, showing the User who made the post as well. 
+
+## Technologies Used
+
+This project makes use of mySQL2 for the database, as well as bycript for sensitive information protection, Sequelize, dotenv, Express.js, Handlebars, and Express-Session.
+
+## Challenges
+
+As with anything recently learned, the main challenge is the connection between the concepts and the application of the concepts. The way the technologies work individually and together, at least for me, represented a great challenge that took failure after failure to get to work. As with anything, it's all about messing up time and time again, after all it's just a coumputer and cannot do anything of real harm if you do mess up. Further improvement of understanding of the concepts, as well as the interaction between them and the technologies was of great help for the project.
+
+## Install and Run!
+
+The project is still not deployed on Heroku, and is henceforth only availabe to be ran locally. However, doing this is simple!
+Once you've cloned the repository and opened it on VS Code, open the integrated terminal and run the following commands:
+
+* npm i
+* mysql - u root
+
+Make sure you've created a .env file. You can do this on the integrate terminal by typing: 
+
+* touch .env
+
+Open the file and copy-paste the following:
+```
+DB_NAME='techBlog_db'
+DB_USER='root'
+DB_PASSWORD=''
+```
+
+ Then, open your terminal and type in the following command: 
+    * mysql -u root
+
+ Source the database and quit mysql
+
+Then, type in the following commands:
+
+* npm i
+* npm run seed
+* node server.js
+
+The app should be listening on localhost:3001
+
+## User Story: 
 
 AS A developer who writes about tech
 I WANT a CMS-style blog site
 SO THAT I can publish articles, blog posts, and my thoughts and opinions
+
+## Acceptance Criteria:
 
 GIVEN a CMS-style blog site
 WHEN I visit the site for the first time
